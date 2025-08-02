@@ -1,0 +1,38 @@
+# Fichiers et dossiers à ignorer par Git
+
+# Dépendances de Composer
+/vendor/
+
+# Fichiers de configuration d'environnement
+.env
+.env.local
+.env.*
+
+# Cache et logs
+/storage/
+cache/
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.swp
+
+# Fichiers générés par l'éditeur
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Autres fichiers sensibles ou inutiles
+node_modules/
+# Ignorer les fichiers de sauvegarde
+*~
+# Ignorer les fichiers de compilation
+*.o
+*.so
+*.exe

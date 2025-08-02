@@ -1,0 +1,9 @@
+<?php
+namespace App\Controllers;
+use App\Models\Product;
+
+class HomeController extends Controller {
+    function index(){
+        return $this->view('home');
+    }
+}
