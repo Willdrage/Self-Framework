@@ -19,7 +19,8 @@ class Controller{
         $template=file_get_contents($viewPath);
         
         $template= preg_replace_callback('/@include\s*\(\s*[\'"](.+?)[\'"]\s*\)/', function($matches){
-            $file= APP_ROOT."resources/views/".$matches[1].".view.php";
+            $file= APP_ROOT."/resources/views/".$matches[1].".view.php";
+            
             if (file_exists($file)) {
                 return file_get_contents($file);
             }
@@ -49,8 +50,7 @@ class Controller{
      * @return void
      */
     protected function redirect(string $url){
-        $test=APP_ROOT.ltrim($url,'/');
-        header('Location: '.APP_ROOT.ltrim($url,'/'));
+        header('Location: '.APP_ROOT."/".ltrim($url,'/'));
         exit;
     }
 

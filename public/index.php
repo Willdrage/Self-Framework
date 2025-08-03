@@ -8,7 +8,6 @@ require_once(ROOT.'autoload.php');
 require_once(ROOT.'routes/web.php');
 
 
-
 function route(string $path = '', $params = []) {
     $finalParams= [];
     preg_match_all('#{(\w+)}#', $path, $match);
@@ -32,12 +31,19 @@ function route(string $path = '', $params = []) {
     foreach ($finalParams as $key=>$value){
         $path = str_replace("{" . $key . "}", $value, $path);
     }
-    $url= ROUTE_URL.$path;
-    return $url;
+    
+    return rtrim(APP_URL,"/")."/".ltrim($path,".");
 }
 
 $requestUri= parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$requestUri = str_replace(URL_SUBFOLDER, '', $requestUri);
+$basePath = parse_url(APP_URL,PHP_URL_PATH) ?? "/";
+
+if (strpos($requestUri, $basePath)===0){
+    $requestUri=substr($requestUri, strlen($basePath));
+    if ($requestUri === false) {
+        $requestUri = '/';
+    }
+}
 
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 

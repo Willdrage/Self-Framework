@@ -16,9 +16,6 @@ A lightweight PHP MVC framework inspired by Laravel. It comes with a simple rout
 
 ```
 MVC/
-├── .vscode/                    # VS Code configuration
-│   ├── extensions.json
-│   └── settings.json
 ├── app/                        
 │   ├── Controllers/            # MVC Controllers
 │   ├── Core/                   # Framework core classes
@@ -36,11 +33,11 @@ MVC/
 │       └── resource.php        # Resource controller generation
 ├── database/                   
 │   └── migrations/             # Migration files
-├── public/                     
-│   └── index.php               # Main entry point
-├── resources/                  # Views and templates
+├── public/   
 │   ├── css/                    
-│   ├── js/                     
+│   ├── js/                    
+│   └── index.php               # Main entry point
+├── resources/                  # Views           
 │   └── views/                  
 ├── routes/                     
 │   └── web.php                 # Web routes
@@ -139,18 +136,5 @@ A more detailed documentation will be added later.
 - Built with modern PHP practices
 - Designed for educational use
 
-/*
-|--------------------------------------------------------------------------
-| Known Issues
-|--------------------------------------------------------------------------
-| - Due to the current MVC routing and URL rewriting, external CSS/JS
-|   files cannot be properly loaded via <link> or <script>.
-| - For now, CSS and scripts will remain inline within the view files
-|   until a proper asset handling system is implemented.
-|
-| TODO:
-| - Implement a proper asset management solution using absolute URLs
-|   or a global constant (e.g. BASE_URL).
-*/
 
 **Note**: This framework is inspired by Laravel and aims to provide a similar developer experience while maintaining simplicity and educational value.
