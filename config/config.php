@@ -1,6 +1,6 @@
 <?php
 
-define('APP_URL','http://localhost/MVC');
+define('APP_URL','http://localhost');
 
 define('APP_ROOT', str_replace('\\', '/', dirname(__DIR__)));
 
