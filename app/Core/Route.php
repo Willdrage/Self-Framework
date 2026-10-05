@@ -108,6 +108,8 @@ class Route{
                         $modelInstance = new $modelClass();
                         $foundObject = $modelInstance->find($assoc[$name]);
                         $args[] = $foundObject;
+                    } elseif (isset($assoc[$name])) {
+                        $args[] = $assoc[$name];
                     }
                 }
                 

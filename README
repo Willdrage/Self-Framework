@@ -10,7 +10,7 @@ A lightweight PHP MVC framework inspired by Laravel. It comes with a simple rout
 - **Migrations system**  
 - **Artisan-like CLI** for fast code generation  
 - **View rendering** with basic template includes  
-- No Composer or package installation required
+- No runtime dependencies; Composer and PHPUnit are used only for development tests
 
 ## 📂 Project Structure
 
@@ -113,6 +113,23 @@ php console model Post
 php console migration create_posts_table
 php console migrate
 ```
+
+## Tests
+
+Install the development dependencies and run the test suite:
+
+```bash
+composer install
+composer test
+```
+
+Or run both steps in Docker:
+
+```bash
+docker compose run --rm tests
+```
+
+Router unit tests are located in `tests/Unit`.
 
 ## 🛑 .gitignore
 

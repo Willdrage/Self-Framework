@@ -2,6 +2,7 @@
 
 # Dépendances de Composer
 /vendor/
+/.phpunit.result.cache
 
 # Fichiers de configuration d'environnement
 .env
